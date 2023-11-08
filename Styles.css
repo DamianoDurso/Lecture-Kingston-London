@@ -1,0 +1,15 @@
+  .test h3 {
+    text-align: center; 
+  }
+
+  .reveal .slide-logo {
+    height: 100px !important;
+    width: 100px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
+
+  /* Custom table style to make it smaller */
+table.smaller-table {
+  font-size: 50%; /* Adjust the percentage to your preference for size reduction */
+}

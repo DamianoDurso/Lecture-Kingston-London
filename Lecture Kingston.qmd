@@ -1,0 +1,669 @@
+---
+title: "Beyond instinct"
+subtitle: 'Crafting well-being interventions with people analytics'
+author:
+-   name: "Damiano D'Urso Ph.D., People Data Scientist"
+    email: 'Damiano.Durso@rabobank.nl'
+    affiliation: 'Rabobank, NL'
+format: revealjs
+self-contained: true
+logo: Rabobank-logo.jpg
+css: Styles.css
+incremental: true
+fig-responsive: true
+mermaid: 
+    theme: neutral
+---
+
+## Learning Outcomes {background-color="lightgreen"}
+- Understand what People Analytics (PA) is
+- Understand how PA can be useful for well-being interventions
+- Identify key steps and challenges of a PA project
+- Apply PA project lifecycle steps 
+
+## Content 
+:::{.nonincremental}
+- General Introduction
+- People Analytics
+- People Analytics project lifecycle
+    - Case studies 
+- Summary
+- Resources
+
+:::
+
+::: footer
+Learn more: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting)
+:::
+
+
+# General Introduction
+## About me
+- M.Sc. in Psychology @ University of Catania
+- Research internship in Psychological Methods @ University of Amsterdam
+- Ph.D. in Methodology and Statistics @ Tilburg University
+- People Data Scientist @ Rabobank
+
+:::footer
+[Doctoral thesis](https://research.tilburguniversity.edu/en/publications/safeguarding-psychological-measurement-psychometric-approaches-to) and [Publications](https://scholar.google.com/citations?user=bIp2LH8AAAAJ&hl=en)
+:::
+
+## About Rabobank
+
+![](Rabobank_glance.png){.absolute .fragment bottom="110" right="50" width="8000"}
+
+::: footer
+[Rabobank Results and Reports](https://www.rabobank.nl/en/about-us/organization/results-and-reports/downloads)
+:::
+
+# People @ Rabobank
+- ~45k employees (~30k in the Netherlands)
+- Different chapters within HR (~850 employees)
+- People Data and Innovation (~40 members)
+- Diverse expertise and cultural backgrounds
+
+# What is People Analytics?
+## Data Science definition
+*Data science is a "concept to unify statistics, data analysis, informatics, and their related methods" to "understand and analyze actual phenomena" with data. It uses techniques and theories drawn from many fields within the context of mathematics, statistics, computer science, information science, and domain knowledge (***Wikipedia, 2023***) *
+
+## Data Science
+![](Venn_DS.webp){.absolute .fragment bottom="20" right="250" width="600"}
+
+::: footer
+[Source](https://towardsdatascience.com/introduction-to-statistics-e9d72d818745)
+:::
+
+
+## In a Nutshell..{auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+Data Science = Make Data Useful
+:::
+
+## In a Nutshell..{auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 1.9em; color: tomato;"}
+Data Science = Make Data Useful
+:::
+
+
+## People Analytics (or People Data Science)
+- "The analysis of employee and workforce data to reveal insights and provide recommendations to improve business outcomes" ([Ferrer and Green, 2021](https://books.google.nl/books?hl=en&lr=&id=At4zEAAAQBAJ&oi=fnd&pg=PP1&dq=excellence+in+people+analytics&ots=200B6VYEds&sig=mmRgwY-rxaZ1-uZ6Z5EV8smtVx4&redir_esc=y#v=onepage&q=excellence%20in%20people%20analytics&f=false))
+
+- "The organizational function within which data collection, analyses, and translation occur as well as a set of practices that draw on employee data to inform and aid decision-making processes and employee activity throughout the organization" ([Polzer, 2022](https://www.sciencedirect.com/science/article/pii/S0191308523000011))
+
+## People Analytics
+![](Venn_PA.png){.absolute .fragment bottom="8" right="250" width="600"}
+
+
+## In a Nutshell..{auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+People Analytics = 
+Make People's Data Useful
+:::
+
+## In a Nutshell..{auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 1.9em; color: tomato;"}
+People Analytics = 
+Make People's Data Useful
+:::
+
+
+## Why People Analytics
+
+People Analytics provides tools, methodologies, and techniques to extract meaning out of employee data and ***make this data useful*** to:
+
+
+- Interpret of a large volume of data;
+- Identify trends and patterns in employee data;
+- Help to predict organizations' and employees' needs;
+- Prioritize HR activities based on impact utility and return on investment;
+- Reduce subjectivity and make decision-making transparent.
+
+
+:::footer
+[Redefining HR using People Analytics](https://www.emerald.com/insight/content/doi/10.1108/HRMID-06-2017-0112/full/html)
+:::
+
+## Usage of People Analytics
+Can you guess what type of applications are commmonly used in people analytics? 
+
+- QR Code to Wordcloud
+
+## People Analytics Examples {.smaller}
+Some interesting applications: 
+
+- Employee retention
+- Enhancing employees' well-being
+- Discovering occupational health risk factors
+- Reduce the pay gap among certain groups
+- Optimize Recruitment and Hire
+- Learning and Development
+- Increase diversity
+- .... etc
+
+# PA project lifecycle
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B --> C(Data Cleaning)
+    C --> D(Data Analysis)
+    D --> E(Interpretation and Storytelling)
+    E --> F(Implementation and Feedback)
+    F --> A
+```
+
+# Business problem discovery {background-color="tomato"}
+
+## Business Problem Discovery
+In this phase, there are a few primary goals:
+
+- Identify Problem
+- Define objectives and success metrics
+- Determine data sources and team 
+
+::: {.notes}
+test
+:::
+
+## 1) Identify problem
+- What is the problem?
+- Is it a problem? What's the business value?
+- Who are the stakeholders involved?
+- What is the scope of the problem?
+- What is the problem time frame?
+
+::: footer
+[Question formulation for problem Discovery](https://rforhr.com/questionformulation.html)
+:::
+
+::: {.notes}
+What does it mean if it is a problem? Well, imagine that someone approaches you to assess why 1% of your population (total = 30k) gets a low performance score. How much impact will our project have? Many companies would be happy to have such a low percentage of employee scoring lower than expected. so is there really a problem? 
+
+Stakeholders: direct, indirect
+Scope: specific dept? 
+:::
+
+## 2) Define objectives
+We normally try to answer these types of questions with People Analytics:
+
+- How much? (regression)
+- Which category? (classification)
+- Which group? (clustering)
+- Which option should be taken? (recommendation system)
+
+:::footer
+[Define objectives and success metrics](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/lifecycle-business-understanding)
+::: 
+
+::: {.notes}
+When conducting analytics projects, we map business questions to potential measurables and outcomes we can reach. 
+Regression: can we determine how much y increase we can expect, or predict, based on...
+:::
+
+## 2) Define success metrics
+- **S**pecific
+- **M**easurable
+- **A**chievable
+- **R**elevant
+- **T**ime-bound
+
+:::footer
+[Define objectives and success metrics](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/lifecycle-business-understanding)
+::: 
+
+::: {.notes}
+Specific = easily quantifiable
+Achievable = trade-off between ambitious and realistic
+relevant = aligned with orgs objectives
+time = within the targeted time
+:::
+
+## 3) Determine data sources and team
+To ensure completeness of information and responsibilities, it is essential to:
+
+- Gather information about existing:
+    - available data
+    - reports and previous projects
+    - documentation
+- Clarify roles and responsibilities
+
+:::footer
+[Define objectives and success metrics](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/lifecycle-business-understanding)
+::: 
+
+::: {.notes}
+team: who is going to collect the data, analyze them, interacti with stakeholders etc?
+:::
+
+## Example
+The IT Department has been a critical part of the organization, driving innovation and ensuring systems run smoothly. However, we've noticed an alarming increase in stress-related sick leaves (~ 15%) among IT employees in the last year, which is higher than industry standards (7%). This not only affects their well-being but also disrupts our operations. To address this issue, we aim to develop a stress-risk classification system to identify high-stress cases early and implement targeted interventions. Our goal is to create a healthier work environment for our IT team.
+
+## Example {.scrollable .smaller} 
+- **Identify problem**:
+    - **Problem**: Manage and reduce workplace stress in the IT Department
+    - **Problem size**: Stress-related sick leaves have increased in the last year (+15%) and are higher than industry benchmarks. Also, there have been an increasing number of IT Teams with numerous sick leaves.
+    - **Stakeholders**: direct (IT dept. employees); indirect (managers, HR)
+    - **Scope**: IT Department employees
+    - **Time frame**: 1 year
+- **Define objectives**: Classify employees into stress risk categories and tailor interventions.
+
+- **Success metrics**: Decrease the number of high-stress cases by 8% within one year from the application of data-driven interventions. 
+
+## Exercise
+Select one of the business cases available on CANVAS and a group of students to work with.
+
+Throughout this lecture, you and your group will work as People Analytic experts and try to go through each of the PA lifecycle steps.
+
+## Exercise
+For this step, discuss with others in your group how to define the following aspects based on the case description:
+
+- Identify problem
+    - Problem
+    - Problem size
+    - Stakeholders
+    - Scope
+- Define objective
+- Hypothesize Success Metrics
+
+
+# Data Acquisition {background-color="steelblue"}
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+```
+
+## Data Acquisition
+Data selection refers to collecting, retrieving, gathering, and sourcing data. 
+
+![](AdobeStock_119801832-edited-scaled.jpeg){.absolute .fragment bottom="0" right="200" width="700"}
+
+:::footer
+[Data acquisition Chapter](https://rforhr.com/dataacquisition.html)
+::::
+
+## Data
+What type of data do you think can be used for People Analytics project? 
+
+- insert QR code for wordcloud
+
+
+## Data {.smaller .scrollable}
+- **Surveys**
+    - *Pros*: affordable, familiar, and (if well designed!!) very effective
+    - *Cons*: bias-sensitive and could induce fatigue  
+- **Performance reviews and rating forms**
+    - *Pros*: efficient and (potentially) informative
+    - *Cons*: bias-sensitive and (often) unreliable
+- **Surveillance and monitoring**
+    - *Pros*: objective behavioral measures, and rich.
+    - *Cons*: intrusive, costly to store
+- **Organisational information** 
+    - *Pros*: Cheap and easily collected
+    - *Cons*: varying data quality
+- **Text and Scraped data**
+    - *Pros*: Rich and new tools facilitate text extraction and analysis
+    - *Cons*: Privacy sensitive and require heavy pre-processing
+
+:::footer
+[Data acquisition Chapter](https://rforhr.com/dataacquisition.html)
+::::
+
+
+## Summary data {.scrollable}
+::: {.smaller-table}
+| Method        | Privacy  | Resource  | Objectivity  | Familiarity  | Complexity  |
+|---------------|----------|-----------|--------------|--------------|-------------|
+| Surveys | + | = | = | + | = |
+| Rating | = | = | = | = | = |
+| Monitoring | = | = | + | = | + |
+| DB Queries | = | = | + | = | + |
+| Scraping | - | + | = | = | + |
+**Legend:**
+(+) High;
+(=) Middle;
+(-) Low
+::: 
+
+
+## Exercise
+
+Discuss, within your group, what type of data you would like to use for your project. The data can also be other than the types we just discussed. Elaborate on your choice and explain:
+
+- Advantages of using the (combination of) data you proposed
+- Disadvantages of using the (combination of) data you proposed
+
+# Data Preparation {background-color="goldenrod"}
+
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B(Data Selection) --> C(Data Preparation)
+ ```
+
+## Data Quality issues
+Selecting the data that we deem appropriate does not, in itself, guarantee good quality. 
+
+Data may be compromised before (or after) acquisition. Typical data quality issues are often due to the following:
+
+- **Incompleteness**: missing values or lacking certain attributes.
+- **Noisiness**: Recording errors or outliers;
+- **Inconsistencies**: Conflicting records or discrepancies;
+
+::: footer
+[Data Quality resources](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/prepare-data)
+:::
+
+## Data pre-processing
+ 
+To ensure good quality levels, it is essential to:
+
+- Conduct data health screens
+- Pre-process data
+
+::: footer
+[Data Quality resources](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/prepare-data)
+:::
+
+## Data health screens {.smaller}
+Data Health can be generally assessed by checking:
+
+- **Record Count**: Determine the total number of records in the dataset.
+
+- **Variables Count**: Identify the number of variables or features in the dataset.
+
+- **Data Types**: Matching between expected and actual attribute type (e.g., nominal)
+
+- **Missing Values**: Count and assess missing values within the dataset.
+
+- **Consistency**: Examine data records for inconsistencies, such as verifying that values fall within specified ranges (e.g., 18 < age < 80)
+
+::: footer
+[Data Quality resources](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/prepare-data)
+:::
+
+
+
+## Data pre-processing {.scrollable .smaller}
+
+Data pre-processing and cleaning are essential steps in preparing data for analysis. Typical steps taken during data pre-processing and cleaning include:
+
+- **Handling Missing Values**: Imputing or removing missing values.
+
+- **Duplicate Detection**: Identify and remove duplicate records.
+
+- **Data Transformation**: Convert data into a suitable format (e.g., standardization).
+
+- **Outlier Detection**: Identify and handle outliers.
+
+- **Data Encoding**: Encode categorical variables into numerical values to make them usable for analysis.
+
+- **Data Discretization**: Divide continuous variables into bins or categories for analysis.
+
+- **Data Aggregation**: Aggregate data to a higher level (e.g., monthly or yearly) for trend analysis.
+
+- **Text Data Processing**: Tokenize and preprocess text data.
+
+- **Data Validation**: Validate data against predefined business rules or HR policies.
+
+Remember!! Keep detailed records of data pre-processing steps for transparency and reproducibility.
+
+
+## Data screening example {.scrollable .smaller}
+Starting from inspecting and visualizing the data is a good way to assess its properties. 
+
+::: {.fragment fragment-index=1}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(knitr)
+df <- read.csv('HRDataset_v14.csv')
+kable(head(df))
+```
+:::
+
+## Data screening example {.scrollable .smaller}
+Constructing descriptive statistics is also helpful to assess data properties, range, etc.
+
+::: {.fragment fragment-index=1}
+```{r} 
+#| echo: false
+library(psych)
+library(knitr)
+df <- read.csv('HRDataset_v14.csv')
+kable(round(as.data.frame(describe(df, check  = F)),3))
+```
+:::
+
+
+## Data Visualization
+Data Visualization can also help in understanding the data and getting quick insights
+
+::: {.fragment fragment-index=1}
+```{r} 
+#| echo: false
+library(GGally)
+library(knitr)
+df <- read.csv('HRDataset_v14.csv')
+pm <- ggpairs(df, columns = c(8,10,31,32),
+ggplot2::aes(colour=Sex))
+pm
+```
+:::
+
+## Exercise
+Based on the data you decided to use in your project, discuss within your group:
+
+- Potential data quality issues
+- Data health screens you would conduct
+- Data pre-processing steps
+- Visualization/Statistics you would investigate
+
+
+# Data Analysis {.smaller background-color="springgreen"}
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B(Data Selection) --> C(Data Preparation)
+    C --> D(Data Analysis)
+ ```
+
+## Data Analysis Goal {.smaller}
+Analyze the (pre-processed) data and provide insights, and recommendations, or draw conclusions about the business problem.
+
+Before deciding on what types of analyses would suit you best, it is essential to know the following:
+
+- What is the purpose of the analyses?
+    - describe
+    - understand
+    - predict/classify
+- How interpretable should my model be?
+- Type of data
+    - structured
+    - unstructured
+    - Mixed
+    - none
+
+## What approach to choose? {.smaller} 
+
+Among some of the most commonly used tools in people analytics, we have:
+
+- **Analytics**: descriptive statistics 
+- **Inferential Statistics**: hypothesis testing, causal modeling (e.g., SEM)
+- **Machine Learning**:
+    - Supervised learning: models for labeled data (i.e., outcome or dependent variable is available)
+    - Unsupervised Learning: models for unlabeled data (i.e., outcome or dependent variable is unavailable)
+- **Computational modeling and simulations**: scenario analysis
+- **Natural Language Processing (NLP)**: text analysis
+
+## People Analytics maturity model
+
+![](Continuum.png){.absolute .fragment bottom="250" right="150" width="850"}
+
+## People Analytics maturity model (actually)
+
+![](Continuum%20ish.png){.absolute .fragment bottom="150" right="150" width="850"}
+
+## Descriptive Analytics
+
+![](Descriptive_process.png){.absolute .fragment bottom="200" right="150" width="850"}
+
+## Predict-ish Analytics
+
+![](Predictish_process.png){.absolute .fragment bottom="60" right="150" width="850"}
+
+## Predictive Analytics
+
+![](Predictive_process.png){.absolute .fragment bottom="200" right="150" width="850"}
+
+## Prescriptive Analytics
+
+![](Prescriptive_continuum.png){.absolute .fragment bottom="150" right="150" width="850"}
+
+## Exercies
+
+Discuss within your group what type of analysis you would conduct for your case study. Specifically, focus on the following aspects:
+
+- How will your data analysis plan contribute to the project's success?
+- Does it match the objective you defined earlier?
+- What kind of metric would you use in your analyses (e.g., mean, p-value), and why?
+- In what PA maturity stage (e.g., predictive analytics) would your proposed analysis fall?
+
+
+# Interpretation and Storytelling {background-color="sandybrown"}
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B(Data Selection) --> C(Data Preparation)
+    C --> D(Data Analysis)
+    D --> E(Interpretation and Storytelling)
+ ```
+
+## Interpretation and storytelling
+
+- The pyramid principle
+- Data Visualization 
+
+
+## The Pyramid Principle
+
+The Pyramid principle technique has been developed by McKinsey &
+Company and, successively published by Barbara Minto ([Minto, 2008, 3rd edition](https://www.amazon.com/Pyramid-Principle-Logic-Writing-Thinking/dp/0273710516)).
+
+This method helps in structuring thinking and convincing audience. The aim, ultimately, is to improve the impact of a project significantly.
+
+## The pyramid principle 
+:::{.nonincremental}
+The Pyramid Principle is a communication strategy that emphasizes presenting information in a structured and impactful way through a hierarchical structure:
+
+- **Main Message**: Concise statement that answers the critical question
+- **Main Arguments**: Several independent arguments that support the main message
+- **Supporting Evidence**: Back up your arguments with relevant evidence
+
+This approach simplifies complex information, making it easier to understand and engage with the audience.
+:::
+
+## The Pyramid Principle
+```{mermaid}
+flowchart TD
+    O[Business problem] --> P[Situation, Complication, Question]
+    P --> E(Analyses)
+    E --> A
+    A[Main message] --> |why| B[Main Argument 1]
+    A --> |why| C[Main Argument 2]
+    A --> |how| D[Main Argument 3]
+
+    B --> b1[ev. 1]
+    B --> b2[ev. 2]
+    B --> b3[ev. 3]
+
+    C --> c1[ev. 4]
+    C --> c2[ev. 5]
+    C --> C3[ev. 6]
+
+    D --> d1[ev. 7]
+    D --> d2[ev. 8]
+    D --> d3[ev. 9]
+```
+
+## A Well-being example
+```{mermaid}
+flowchart TD
+    O[Business problem] --> P[Reduce sick leave]
+    P --> E(Analyses)
+    E --> A
+    A[Promote Wellbeing] --> |why| B[Improve Employee health]
+    A --> |why| C[Enhances work-life balance]
+    A --> |how| D[Foster Positive work environment]
+
+    B --> b1[ev. 1]
+    B --> b2[ev. 2]
+    B --> b3[ev. 3]
+
+    C --> c1[ev. 4]
+    C --> c2[ev. 5]
+    C --> C3[ev. 6]
+
+    D --> d1[ev. 7]
+    D --> d2[ev. 8]
+    D --> d3[ev. 9]
+```
+
+## Data Visualization principles
+
+- Define your message
+- Understand analyses behind the message
+- Pick a suitable graph
+- Check the graph for clarity
+    - formulate message
+    - less is more
+    - guide attention
+
+## Data Visualization charts
+
+![](GraphTypes.png)
+
+# Implementation and feedback {background-color="cyan"}
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B(Data Selection) --> C(Data Preparation)
+    C --> D(Data Analysis)
+    D --> E(Interpretation and Storytelling)
+    E --> F(Implementation and Feedback)
+    F --> A
+ ```
+
+## Implementation and feedback
+- Data and Results are only the starting point of a conversation
+- Align with stakeholders
+- Change management
+- Ethical and legal considerations
+
+# Summary
+```{mermaid}
+flowchart 
+  %%| fig-width: 10
+    A(Business Problem Discovery) --> B(Data Selection)
+    B(Data Selection) --> C(Data Preparation)
+    C --> D(Data Analysis)
+    D --> E(Interpretation and Storytelling)
+    E --> F(Implementation and Feedback)
+    F --> A
+ ```
+
+## Questions? 
+
+# Resources
+- [Microsoft Data Science Project lifecycle](https://learn.microsoft.com/en-us/azure/architecture/data-science-process/overview)
+- [HR Analytics with R](https://rforhr.com) 
+- [Excellence in People Analytics](https://www.koganpage.com/hr-learning-development/excellence-in-people-analytics-9780749498290)
